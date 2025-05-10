@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.nav-logo {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.nav-logo a{
+    text-decoration: none;
+    font-size: 2rem;
+    color:#1a5276;
+}
+
+.nav-img {
+    height: 85%;
+}
+
+nav{
+    width: 100%;
+    height: 5rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 0 7rem;
+    background-color: white;
+    border-bottom: 0.05rem solid rgba(1, 16, 65, 0.5);
+    opacity: 98%;
+    user-select: none;
+    top: 0;
+    position: fixed;
+    z-index: 100;
+}
+
+.nav-links{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    color:rgb(25, 58, 101);
+    display: inline-block;
+    transform-origin: center;
+}
+
+.nav-links a:hover{
+    transition: 0.2s;
+    color: #2e86c1;
+    transform: scale(1.05); 
+}
+
+.current-page{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.current-page a{
+    text-decoration: none;
+    display: inline-block;
+    color: #2e86c1;
+}
+
+.history-section {
+    margin-top: 4rem;
+    width: 100%;
+    padding: 2rem 0;
+    background-color: #f2f6ff;
+}
+
+.history-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.history-title h1 {
+    font-size: 3rem;
+    color: #1a5276;
+    text-align: center;
+}
+
+.history-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    gap: 3rem;
+}
+
+.history-image-container {
+    max-width: 45rem;
+}
+
+.history-image {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.history-text {
+    max-width: 48rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.history-text h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+    color: #1a5276;
+}
+
+.history-text p {
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.card-section {
+    padding: 4rem 7%;
+    background-color: white;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #1a5276;
+    position: relative;
+    display: inline-block;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.card {
+    flex: 1;
+    background-color: #f2f6ff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: #1a5276;
+    text-align: center;
+}
+
+.card p {
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.achievement-section {
+    padding: 4rem 3rem;
+    background-color: #f2f6ff;
+}
+
+.achievement-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.achievement-card {
+    flex: 1;
+    min-width: 20rem;
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: scale(1.02);
+}
+
+.achievement-card img {
+    width: 100%;
+    height: 19rem;
+    object-fit: cover;
+}
+
+.achievement-card h3 {
+    font-size: 1.5rem;
+    padding: 0.5rem 1.5rem 0.5rem;
+    color: #1a5276;
+}
+
+.achievement-card p {
+    text-align: justify;
+    padding: 0 1.5rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.footer {
+    background-color: #1a5276;
+    color: white;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.footer-section {
+    max-width: 22rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-section p {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.contact-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.contact-logo img {
+    width: 1.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.8rem;
+    vertical-align: middle;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem 0;
+    background-color: #154360;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #2e86c1;
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 0;
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    .nav-logo {
+        height: auto;
+    }
+
+    .nav-img {
+        height: 2.5rem;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem 0;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+    .history-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .history-image-container,
+    .history-text {
+        max-width: 100%;
+    }
+
+    .history-title h1 {
+        font-size: 2.5rem;
+    }
+
+    .history-text h2 {
+        font-size: 2rem;
+    }
+
+    .card-container {
+        flex-direction: column;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+     .achievement-card {
+        min-width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        width: 100%;
+        padding-right: 0;
+    }
+}
