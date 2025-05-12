@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="../css/gallery.css">
+    <script src="../js/gallery.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">
+            <img src="../assets/logo/ship_logo.png" alt="navimg" class="nav-img">
+            <a href="index.html">ShipDecKK</a>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <div class="current-page">
+                <a href="gallery.html">Gallery</a>
+            </div>
+            <a href="services.html">Services</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="subscription.html">Subscription</a>
+        </div>
+    </nav>
+
+    <div class="gallery-header">
+        <h1>Our Ship Collection</h1>
+        <p>Discover our diverse range of vessels built with the finest materials and expert craftsmanship</p>
+    </div>
+
+    <div class="gallery-container">
+        <!-- Luxury Yachts -->
+        <div class="gallery-item yacht">
+            <div class="gallery-image">
+                <img src="../assets/gallery/yacht1.webp" alt="Luxury Yacht - Azure Dream">
+            </div>
+            <div class="gallery-info">
+                <h3>Azure Dream</h3>
+                <p class="price">$5,200,000</p>
+                <p class="description">A stunning 80-foot luxury yacht with 4 cabins, perfect for ocean adventures with family and friends.</p>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="gallery-item yacht">
+            <div class="gallery-image">
+                <img src="../assets/gallery/yacht2.webp" alt="Luxury Yacht - Royal Marina">
+            </div>
+            <div class="gallery-info">
+                <h3>Royal Marina</h3>
+                <p class="price">$7,800,000</p>
+                <p class="description">Elegant 100-foot yacht featuring 5 luxury suites, a jacuzzi, and state-of-the-art entertainment systems.</p>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="gallery-item yacht">
+            <div class="gallery-image">
+                <img src="../assets/gallery/yacht3.webp" alt="Luxury Yacht - Ocean Serenity">
+            </div>
+            <div class="gallery-info">
+                <h3>Ocean Serenity</h3>
+                <p class="price">$4,500,000</p>
+                <p class="description">A sleek 75-foot yacht with modern interior design, 3 cabins and exceptional fuel efficiency.</p>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <!-- Cargo Vessels -->
+        <div class="gallery-item cargo">
+            <div class="gallery-image">
+                <img src="../assets/gallery/cargo1.webp" alt="Cargo Vessel - Pacific Trader">
+            </div>
+            <div class="gallery-info">
+                <h3>Pacific Trader</h3>
+                <p class="price">$15,300,000</p>
+                <p class="description">Reliable cargo vessel with 8,000 TEU capacity, designed for transatlantic shipping routes.</p>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="gallery-item cargo">
+            <div class="gallery-image">
+                <img src="../assets/gallery/cargo2.webp" alt="Cargo Vessel - Global Freight">
+            </div>
+            <div class="gallery-info">
+                <h3>Global Freight</h3>
+                <p class="price">$22,100,000</p>
+                <p class="description">Modern 10,500 TEU capacity cargo ship with eco-friendly propulsion systems and advanced navigation.</p>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="gallery-item cargo">
+            <div class="gallery-image">
+                <img src="../assets/gallery/cargo3.webp" alt="Cargo Vessel - Ocean Carrier">
+            </div>
+            <div class="gallery-info">
+                <h3>Ocean Carrier</h3>
+                <p class="price">$18,750,000</p>
+                <p class="description">Versatile cargo vessel suitable for various types of goods, featuring 9,200 TEU capacity.</p>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <!-- Cruise Liners -->
+        <div class="gallery-item liner">
+            <div class="gallery-image">
+                <img src="../assets/gallery/liner1.webp" alt="Cruise Liner - Majestic Seas">
+            </div>
+            <div class="gallery-info">
+                <h3>Majestic Seas</h3>
+                <p class="price">$120,000,000</p>
+                <p class="description">Luxury cruise liner with capacity for 2,800 passengers, featuring swimming pools, theaters, and gourmet restaurants.</p>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="gallery-item liner">
+            <div class="gallery-image">
+                <img src="../assets/gallery/liner2.webp" alt="Cruise Liner - Ocean Paradise">
+            </div>
+            <div class="gallery-info">
+                <h3>Ocean Paradise</h3>
+                <p class="price">$145,000,000</p>
+                <p class="description">State-of-the-art cruise ship accommodating 3,200 guests with premium amenities and entertainment options.</p>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+
+        <div class="gallery-item liner">
+            <div class="gallery-image">
+                <img src="../assets/gallery/liner3.webp" alt="Cruise Liner - Celestial Voyager">
+            </div>
+            <div class="gallery-info">
+                <h3>Celestial Voyager</h3>
+                <p class="price">$135,500,000</p>
+                <p class="description">Modern cruise liner for 3,000 passengers with innovative design features and eco-friendly technology.</p>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for ship details -->
+    <div id="ship-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-ship-content">
+                <!-- Content will be filled by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Company</h3>
+                <p>ShipDecKK is your trusted ship dealership since 2020, specializing in luxury yachts, cargo vessels, and cruise liners built with the finest materials and expert craftsmanship.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="contact-logo">
+                    <img src="../assets/logo/phone_logo.png" alt="Phone">
+                    <p>123456789</p>
+                </div>
+                <div class="contact-logo">
+                    <img src="../assets/logo/email_logo.png" alt="Email">
+                    <p>info@shipdeckk.com</p>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com">Facebook</a>
+                    <a href="https://instagram.com">Instagram</a>
+                    <a href="https://x.com">X</a>
+                    <a href="https://linkedin.com">Linkedin</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ShipDecKK. All Rights Reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -4,6 +4,7 @@ const emailInput = document.getElementById("email");
 const ageInput = document.getElementById("age");
 const passwordInput = document.getElementById("password");
 const checkboxes = document.querySelectorAll('input[name="prefs"]');
+const successMessage = document.getElementById("successMessage");
 
 const nameError = document.getElementById("nameerror");
 const emailError = document.getElementById("emailerror");
@@ -28,6 +29,10 @@ checkboxes.forEach(checkbox => {
         prefsError.textContent = '';
     });
 });
+
+function hideSuccessMessage() {
+    successMessage.classList.remove('show');
+}
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -135,18 +140,11 @@ form.addEventListener("submit", function (event) {
     }
 
     if (isValid) {
-        const successMessage = document.createElement('div');
-        successMessage.textContent = "Thank you for subscribing!";
-        successMessage.style.color = "#27ae60";
-        successMessage.style.fontSize = "1.2rem";
-        successMessage.style.textAlign = "center";
-        successMessage.style.marginTop = "1rem";
-        
-        form.appendChild(successMessage);
+        successMessage.classList.add('show');
 
         setTimeout(() => {
             form.reset();
-            successMessage.remove();
-        }, 1000);
+            hideSuccessMessage();
+        }, 3000);
     }
 });
