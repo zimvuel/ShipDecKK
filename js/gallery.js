@@ -1,42 +1,67 @@
 document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.main-card');
+    const cardContainer = document.querySelector('.card-container');
     
-    const closeAllCardDetails = () => {
+    function closeAllCardDetails() {
         cards.forEach(card => {
             card.querySelector('.card-details').classList.remove('active');
         });
-    };
+    }
 
-    cards.forEach(card => {
-        card.addEventListener('click', (event) => {
-            if (event.target.closest('a')){
-                return;
-            } 
+    function getCardsInSameRow(clickedCard) {
+        const clickedRect = clickedCard.getBoundingClientRect();
+        const rowCards = [];
 
-            const details = card.querySelector('.card-details');
-            const isCurrentlyActive = details.classList.contains('active');
+        cards.forEach(card => {
+            const rect = card.getBoundingClientRect();
 
-            closeAllCardDetails();
-
-            if (!isCurrentlyActive) {
-                if (window.innerWidth <= 768) {
-                    details.classList.add('active');
-                } else {
-                    const cardIndex = Array.from(cards).indexOf(card);
-                    
-                    for (let i = cardIndex; i < cardIndex + 3 && i < cards.length; i++) {
-                        cards[i].querySelector('.card-details').classList.add('active');
-                    }
-                }
+            if (Math.abs(rect.top - clickedRect.top) < 20) {
+                rowCards.push(card);
             }
         });
-    });
+        
+        return rowCards;
+    }
+    
+    function expandCardDetails(card) {
+        const details = card.querySelector('.card-details');
+        
+        if (window.innerWidth <= 768) {
+            details.classList.add('active');
+        } else {
+            const rowCards = getCardsInSameRow(card);
+            rowCards.forEach(rowCard => {
+                rowCard.querySelector('.card-details').classList.add('active');
+            });
+        }
+    }
+    
+    function handleCardClick(event) {
+        if (event.target.closest('a')) {
+            return;
+        } 
+        const card = event.currentTarget;
+        const details = card.querySelector('.card-details');
+        const isCurrentlyActive = details.classList.contains('active');
 
-    document.addEventListener('click', (event) => {
+        closeAllCardDetails();
+        if (!isCurrentlyActive) {
+            expandCardDetails(card);
+        }
+    }
+    
+    function handleOutsideClick(event) {
         if (!event.target.closest('.main-card')) {
             closeAllCardDetails();
         }
-    });
-
-    window.addEventListener('resize', closeAllCardDetails);
+    }
+    
+    function setupEventListeners() {
+        cards.forEach(card => {
+            card.addEventListener('click', handleCardClick);
+        });
+        document.addEventListener('click', handleOutsideClick);
+        window.addEventListener('resize', closeAllCardDetails);
+    }
+    setupEventListeners();
 });
