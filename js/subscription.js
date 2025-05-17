@@ -76,8 +76,8 @@ form.addEventListener("submit", function (event) {
     } else if (email.includes(" ")) {
         emailError.textContent = "Email cannot contain spaces";
         isValid = false;
-    } else if (!email.includes("@") || !email.includes(".")) {
-        emailError.textContent = "Please enter a valid email address";
+    } else if (!email.includes("@") || !email.includes(".") || !email.includes(".com")) {
+        emailError.textContent = "Please enter a valid email address (must include '@', '.', '.com').";
         isValid = false;
     }
 
