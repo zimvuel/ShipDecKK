@@ -110,10 +110,10 @@ form.addEventListener("submit", function (event) {
         
         for (let i = 0; i < password.length; i++) {
             const char = password.charAt(i);
-            if (char === char.toUpperCase() && char !== char.toLowerCase()) {
+            if (char >= 'A' && char <= 'Z') {
                 hasUppercase = true;
             }
-            if (char === char.toLowerCase() && char !== char.toUpperCase()) {
+            if (char >= 'a' && char <= 'z') {
                 hasLowercase = true;
             }
             if (char >= '0' && char <= '9') {
