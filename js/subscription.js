@@ -114,10 +114,10 @@ form.addEventListener("submit", function (event) {
             }
         }
 
-        if(!hasUppercase){
+        if(!hasUpper){
             passError.textContent = "Password must contain at least one uppercase letter";
             Valid = false;
-        }else if(!hasLowercase){
+        }else if(!hasLower){
             passError.textContent = "Password must contain at least one lowercase letter";
             Valid = false;
         }else if(!hasNumber){
