@@ -12,134 +12,127 @@ const ageError = document.getElementById("ageerror");
 const passError = document.getElementById("passerror");
 const prefsError = document.getElementById("prefserror");
 
-function clearErrorOnInput(input, errorElement) {
+function clearErrorOnInput(input, errorElement){
     input.addEventListener('input', function() {
         errorElement.textContent = '';
     });
 }
-
 clearErrorOnInput(nameInput, nameError);
 clearErrorOnInput(emailInput, emailError);
 clearErrorOnInput(ageInput, ageError);
 clearErrorOnInput(passwordInput, passError);
 
-// Clear preferences error when any checkbox is clicked
 checkboxes.forEach(checkbox => {
     checkbox.addEventListener('change', function() {
         prefsError.textContent = '';
     });
 });
 
-function hideSuccessMessage() {
+function hideSuccessMessage(){
     successMessage.classList.remove('show');
 }
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
-
     nameError.textContent = '';
     emailError.textContent = '';
     ageError.textContent = '';
     passError.textContent = '';
     prefsError.textContent = '';
-    
-    let isValid = true;
 
+    let Valid = true;
     const name = form.name.value.trim();
-    if (!name) {
+    if(!name){
         nameError.textContent = "Name is required";
-        isValid = false;
-    } else if (name.length < 3) {
+        Valid = false;
+    }else if (name.length < 3){
         nameError.textContent = "Name must be at least 3 characters";
-        isValid = false;
-    } else{
+        Valid = false;
+    }else{
         let hasNonLetterChars = false;
-
-        for (let i = 0; i < name.length; i++) {
+        for(let i = 0; i < name.length; i++){
             const char = name.charAt(i);
-            if (!((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') || char === ' ')) {
+            if(!((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') || char === ' ')){
                 hasNonLetterChars = true;
                 break;
             }
         }
-
-        if (hasNonLetterChars) {
+        if(hasNonLetterChars){
             nameError.textContent = "Name can only contain letters and spaces";
-            isValid = false;
+            Valid = false;
         }
     }
 
     const email = form.email.value.trim();
-    if (!email) {
+    if(!email){
         emailError.textContent = "Email is required";
-        isValid = false;
-    } else if (email.includes(" ")) {
+        Valid = false;
+    }else if(email.includes(" ")){
         emailError.textContent = "Email cannot contain spaces";
-        isValid = false;
-    } else if (!email.includes("@") || !email.includes(".") || !email.includes(".com")) {
+        Valid = false;
+    }else if(!email.includes("@") || !email.includes(".") || !email.includes(".com")){
         emailError.textContent = "Please enter a valid email address (must include '@', '.', '.com').";
-        isValid = false;
+        Valid = false;
     }
 
     const age = form.age.value.trim();
-    if (!age) {
+    if(!age){
         ageError.textContent = "Age is required";
-        isValid = false;
-    } else {
+        Valid = false;
+    }else{
         const ageNum = Number(age);
-        if (isNaN(ageNum)) {
+        if(isNaN(ageNum)){
             ageError.textContent = "Age must be a number";
-            isValid = false;
-        } else if (ageNum < 18 || ageNum > 40) {
+            Valid = false;
+        }else if(ageNum < 18 || ageNum > 40){
             ageError.textContent = "Age must be between 18 and 40";
-            isValid = false;
+            Valid = false;
         }
     }
 
     const password = form.password.value.trim();
-    if (!password) {
+    if(!password){
         passError.textContent = "Password is required";
-        isValid = false;
-    } else if (password.length < 8) {
+        Valid = false;
+    }else if(password.length < 8){
         passError.textContent = "Password must be at least 8 characters";
-        isValid = false;
-    } else {
-        let hasUppercase = false;
-        let hasLowercase = false;
+        Valid = false;
+    }else{
+        let hasUpper = false;
+        let hasLower = false;
         let hasNumber = false;
-        
-        for (let i = 0; i < password.length; i++) {
+        for(let i = 0; i < password.length; i++){
             const char = password.charAt(i);
-            if (char >= 'A' && char <= 'Z') {
-                hasUppercase = true;
+            if(char >= 'A' && char <= 'Z'){
+                hasUpper = true;
             }
-            if (char >= 'a' && char <= 'z') {
-                hasLowercase = true;
+            if(char >= 'a' && char <= 'z'){
+                hasLower = true;
             }
-            if (char >= '0' && char <= '9') {
+            if(char >= '0' && char <= '9'){
                 hasNumber = true;
             }
         }
-        
-        if (!hasUppercase) {
+
+        if(!hasUppercase){
             passError.textContent = "Password must contain at least one uppercase letter";
-            isValid = false;
-        } else if (!hasLowercase) {
+            Valid = false;
+        }else if(!hasLowercase){
             passError.textContent = "Password must contain at least one lowercase letter";
-            isValid = false;
-        } else if (!hasNumber) {
+            Valid = false;
+        }else if(!hasNumber){
             passError.textContent = "Password must contain at least one number";
-            isValid = false;
+            Valid = false;
         }
     }
 
     const checkedPrefs = document.querySelectorAll('input[name="prefs"]:checked');
-    if (checkedPrefs.length === 0) {
+    if(checkedPrefs.length === 0){
         prefsError.textContent = "Please select at least one subscription preference";
-        isValid = false;
+        Valid = false;
     }
 
-    if (isValid) {
+    if(Valid){
         successMessage.classList.add('show');
 
         setTimeout(() => {

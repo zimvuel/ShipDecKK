@@ -1,12 +1,12 @@
 const cards = document.querySelectorAll('.main-card');
 
-function closeAllCardDetails() {
+function closeAllCardDetails(){
     cards.forEach(card => {
         card.querySelector('.card-details').classList.remove('active');
     });
 }
 
-function getCardsInSameRow(clickedCard) {
+function getCardsInSameRow(clickedCard){
     const clickedRect = clickedCard.getBoundingClientRect();
     const rowCards = [];
 
@@ -20,7 +20,7 @@ function getCardsInSameRow(clickedCard) {
     return rowCards;
 }
 
-function expandCardDetails(card) {
+function expandCardDetails(card){
     const rowCards = getCardsInSameRow(card);
 
     rowCards.forEach(rowCard => {
@@ -28,7 +28,7 @@ function expandCardDetails(card) {
     });
 }
 
-function handleCardClick(event) {
+function handleCardClick(event){
     const card = event.currentTarget;
     const details = card.querySelector('.card-details');
     const isCurrentlyActive = details.classList.contains('active');
@@ -39,13 +39,13 @@ function handleCardClick(event) {
     }
 }
 
-function handleOutsideClick(event) {
+function handleOutsideClick(event){
     if(!event.target.closest('.main-card')){
         closeAllCardDetails();
     }
 }
 
-function setupEventListeners() {
+function setupEventListeners(){
     cards.forEach(card => {
         card.addEventListener('click', handleCardClick);
     });
